@@ -21,9 +21,9 @@ Dengan bantuan `pywhatkit`, script ini akan:
 ## 📝 Struktur File
 
 ```
-whatsapp-blast-uiux/
+Pesan-WA-Otomatis/
 ├── main.py          # Script utama
-├── data2.xlsx       # File Excel berisi data nama & nomor HP
+├── data.xlsx       # File Excel berisi data nama & nomor HP
 ├── poster.jpg       # Gambar poster yang akan dikirim
 └── README.md        # Penjelasan project
 ```

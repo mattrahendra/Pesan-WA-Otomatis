@@ -1,7 +1,11 @@
+"""
+Modul ini mengirimkan pesan WhatsApp massal dengan poster gambar menggunakan pywhatkit.
+"""
+
+import os
+import time
 import pandas as pd
 import pywhatkit as kit
-import time
-import os
 
 # Baca file Excel
 df = pd.read_excel("data2.xlsx", header=None)
@@ -22,11 +26,11 @@ def format_nomor(nomor):
 df["NomorFormatted"] = df["NomorHP"].apply(format_nomor)
 
 # Path untuk file gambar poster
-poster_path = "poster.jpg"
+POSTER_PATH = "poster.jpg"
 
 # Pastikan file poster ada
-if not os.path.exists(poster_path):
-    print(f"Error: File poster '{poster_path}' tidak ditemukan.")
+if not os.path.exists(POSTER_PATH):
+    print(f"Error: File poster '{POSTER_PATH}' tidak ditemukan.")
     exit()
 
 # Kirim pesan ke semua nomor
@@ -58,7 +62,7 @@ Tenang! Inatechno hadir dengan Workshop UI/UX Fundamental: Design Digital untuk 
         # Kirim gambar dengan caption - menggunakan parameter yang benar
         kit.sendwhats_image(
             receiver=nomor,
-            img_path=poster_path,
+            img_path=POSTER_PATH,
             caption=pesan,
             wait_time=30,
             tab_close=True

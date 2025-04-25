@@ -28,7 +28,7 @@ whatsapp-blast-uiux/
 └── README.md        # Penjelasan project
 ```
 
-## 📂 Format File Excel (`data2.xlsx`)
+## 📂 Format File Excel (`data.xlsx`)
 
 | No | Nama        | NomorHP      |
 |----|-------------|--------------|
@@ -46,8 +46,8 @@ Kolom:
 ### 1. Clone Repository (atau download ZIP)
 
 ```bash
-git clone https://github.com/username/whatsapp-blast-uiux.git
-cd whatsapp-blast-uiux
+git clone https://github.com/mattrahendra/Pesan-WA-Otomatis.git
+cd Pesan-WA-Otomatis
 ```
 
 ### 2. Install Library yang Dibutuhkan
@@ -64,7 +64,7 @@ Atau install manual:
 pip install pandas pywhatkit openpyxl
 ```
 
-### 3. Jalankan Script
+### 3. Install Library Tambahan
 
 Jangan lupa untuk install library di CMD
 

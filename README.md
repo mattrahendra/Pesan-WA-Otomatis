@@ -1,4 +1,4 @@
-# 📤 WhatsApp Blast - UI/UX Workshop Poster Sender
+# 📤 WhatsApp Blast - Sender
 
 Script Python ini digunakan untuk mengirimkan pesan promosi dan gambar poster workshop secara otomatis ke banyak nomor WhatsApp menggunakan data dari file Excel. Sangat cocok digunakan untuk keperluan promosi seperti event, workshop, seminar, dan lainnya.
 

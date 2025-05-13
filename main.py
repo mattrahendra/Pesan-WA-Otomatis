@@ -76,19 +76,7 @@ class WhatsAppBulkSender:
         self.message_template.pack(fill="both", expand=True, padx=5, pady=5)
         
         # Set default template
-        default_template = """📣 INFO WORKSHOP INATECHNO
-Hi {nama}
-🎨 Tertarik jadi UI/UX Designer? Tapi bingung mulai dari mana?
-Tenang! Inatechno hadir dengan Workshop UI/UX Fundamental: Design Digital untuk Pemula 🔥
-💡 Kamu akan belajar:
-✅ Konsep dasar UI & UX
-✅ Desain prinsip yang bisa langsung dipraktikkan
-✅ Cara bikin wireframe & prototype pakai Figma
-✅ Menyusun user flow
-✅ Cara menilai kualitas desain digital
-📅 Tanggal: 26 April 2025
-📍 Hybrid Workshop - Kuota Terbatas!
-🎟 Daftar sekarang: bit.ly/work-ina"""
+        default_template = """tes no {no}. kamu adalah {nama} dengan nomor {nomor}!"""
         self.message_template.insert(tk.END, default_template)
         
         # Frame for control buttons
@@ -98,7 +86,8 @@ Tenang! Inatechno hadir dengan Workshop UI/UX Fundamental: Design Digital untuk 
         self.start_button = ttk.Button(control_frame, text="Start", command=self.start_sending)
         self.start_button.pack(side="left", padx=5)
         
-        self.pause_button = ttk.Button(control  self.pause_button.pack(side="left", padx=5)
+        self.pause_button = ttk.Button(control_frame, text="Pause", command=self.pause_sending, state="disabled")
+        self.pause_button.pack(side="left", padx=5)
         
         self.stop_button = ttk.Button(control_frame, text="Stop", command=self.stop_sending, state="disabled")
         self.stop_button.pack(side="left", padx=5)
@@ -131,7 +120,7 @@ Tenang! Inatechno hadir dengan Workshop UI/UX Fundamental: Design Digital untuk 
         file_path = filedialog.askopenfilename(filetypes=[("Image files", "*.jpg *.jpeg *.png")])
         if file_path:
             self.poster_path_var.set(file_path)
-            self.poster_path auraient file_path
+            self.poster_path = file_path
     
     def load_excel(self, file_path):
         try:

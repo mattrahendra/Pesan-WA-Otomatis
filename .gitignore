@@ -1,5 +1,39 @@
-# Ignore virtual environments
-.venv/
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-*
+
+# System files
 .DS_Store
+Thumbs.db
+
+# Package manager
+*.egg-info/
+dist/
+build/
+
+# Logs and temporary files
+*.log
+*.tmp
+temp/
+
+# Data and media files
+*.xlsx
+*.xls
+*.jpg
+*.jpeg
+*.png
+
+# Environment variables
+.env
+*.env

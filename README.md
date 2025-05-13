@@ -1,102 +1,122 @@
-# 📤 WhatsApp Blast - UI/UX Workshop Poster Sender
+📤 WhatsApp Bulk Sender - UI/UX Workshop Poster Sender
+Script Python ini digunakan untuk mengirimkan pesan promosi dan gambar poster workshop secara otomatis ke banyak nomor WhatsApp menggunakan data dari file Excel. Dilengkapi dengan antarmuka grafis (GUI) berbasis Tkinter, script ini sangat cocok untuk keperluan promosi seperti event, workshop, seminar, dan lainnya.
+📌 Deskripsi
+Dengan bantuan pywhatkit dan antarmuka GUI, script ini akan:
 
-Script Python ini digunakan untuk mengirimkan pesan promosi dan gambar poster workshop secara otomatis ke banyak nomor WhatsApp menggunakan data dari file Excel. Sangat cocok digunakan untuk keperluan promosi seperti event, workshop, seminar, dan lainnya.
+Membaca data nama dan nomor HP dari file Excel.
+Memformat nomor HP ke format internasional (contoh: +62xxx).
+Menampilkan pratinjau data Excel dalam tabel sebelum pengiriman.
+Mengirimkan gambar poster dan caption yang dipersonalisasi ke masing-masing kontak.
+Menambahkan jeda acak untuk menghindari deteksi spam oleh WhatsApp Web.
+Menyediakan kontrol untuk memulai, menjeda, dan menghentikan pengiriman pesan.
 
-## 📌 Deskripsi
+⚙️ Fitur
 
-Dengan bantuan `pywhatkit`, script ini akan:
-- Membaca data nama dan nomor HP dari file `Excel`
-- Memformat nomor HP ke format internasional (contoh: +62xxx)
-- Mengirimkan **gambar poster** dan **caption** secara otomatis ke masing-masing kontak
-- Menambahkan jeda agar tidak dianggap spam oleh WhatsApp Web
+✅ Antarmuka grafis yang ramah pengguna.
+✅ Pratinjau data Excel dalam tabel yang dapat digulir.
+✅ Dukungan format nomor lokal dan internasional.
+✅ Pesan personal dengan variabel {nama}, {nomor}, dan {no}.
+✅ Kirim gambar poster dengan caption kustom.
+✅ Pengaturan jeda minimum dan maksimum antar pesan.
+✅ Pilih rentang penerima untuk pengiriman.
+✅ Penanganan error dengan log aktivitas.
+✅ Progress bar untuk memantau proses pengiriman.
 
-## ⚙️ Fitur
+📝 Struktur File
+whatsapp-bulk-sender/
+├── WhatsAppBulkSender.py  # Script utama dengan GUI
+├── data.xlsx             # File Excel berisi data nama & nomor HP (contoh)
+├── poster.jpg            # Gambar poster yang akan dikirim (contoh)
+├── requirements.txt      # Daftar dependensi
+├── README.md             # Penjelasan proyek
+└── .gitignore            # File untuk mengabaikan file tertentu
 
-- ✅ Support format nomor lokal dan internasional
-- ✅ Kirim pesan personal dengan nama penerima
-- ✅ Kirim gambar + caption
-- ✅ Bekerja dengan WhatsApp Web
-- ✅ Penanganan error saat pengiriman
+📂 Format File Excel (data.xlsx)
 
-## 📝 Struktur File
 
-```
-whatsapp-blast-uiux/
-├── main.py          # Script utama
-├── data2.xlsx       # File Excel berisi data nama & nomor HP
-├── poster.jpg       # Gambar poster yang akan dikirim
-└── README.md        # Penjelasan project
-```
 
-## 📂 Format File Excel (`data2.xlsx`)
+No
+Nama
+NomorHP
 
-| No | Nama        | NomorHP      |
-|----|-------------|--------------|
-| 1  | Budi Setiawan | 081234567890 |
-| 2  | Ani Lestari   | 628123456789 |
-| ...| ...           | ...          |
+
+
+1
+Budi Setiawan
+081234567890
+
+
+2
+Ani Lestari
+628123456789
+
+
+...
+...
+...
+
 
 Kolom:
-- **No** → Nomor urut
-- **Nama** → Nama penerima
-- **NomorHP** → Nomor telepon yang akan diformat otomatis
 
-## 🚀 Cara Instalasi & Jalankan
+No: Nomor urut atau ID penerima.
+Nama: Nama penerima untuk personalisasi pesan.
+NomorHP: Nomor telepon, akan diformat otomatis ke format internasional.
 
-### 1. Clone Repository (atau download ZIP)
+Catatan: File Excel tidak boleh memiliki header; data dimulai dari baris pertama.
+🚀 Cara Instalasi & Jalankan
+1. Clone Repository (atau download ZIP)
+git clone https://github.com/yourusername/whatsapp-bulk-sender.git
+cd whatsapp-bulk-sender
 
-```bash
-git clone https://github.com/username/whatsapp-blast-uiux.git
-cd whatsapp-blast-uiux
-```
-
-### 2. Install Library yang Dibutuhkan
-
-Pastikan kamu sudah menginstall Python. Lalu jalankan:
-
-```bash
+Ganti yourusername dengan nama pengguna GitHub Anda.
+2. Install Library yang Dibutuhkan
+Pastikan Anda memiliki Python 3.6+ terinstal. Instal dependensi dengan:
 pip install -r requirements.txt
-```
 
-Atau install manual:
-
-```bash
+Atau instal manual:
 pip install pandas pywhatkit openpyxl
-```
 
-### 3. Jalankan Script
-
-Jangan lupa untuk install library di CMD
-
-```bash
+Untuk Windows, instal juga pywin32 jika diperlukan:
 pip install pywin32
-```
+
+3. Siapkan File
+
+File Excel: Buat file Excel (misalnya, data.xlsx) dengan format di atas.
+Poster: Siapkan gambar poster (JPG, JPEG, atau PNG) di direktori proyek.
+WhatsApp Web: Pastikan Anda sudah login ke WhatsApp Web di browser default (Chrome/Edge).
+
+4. Jalankan Script
+python WhatsAppBulkSender.py
+
+5. Gunakan GUI
+
+Pilih File: Klik "Browse" untuk memilih file Excel dan poster.
+Pratinjau Data: Klik "Preview Data" untuk melihat isi file Excel.
+Sesuaikan Pengaturan:
+Atur jeda minimum dan maksimum (dalam detik).
+Tentukan rentang penerima (misalnya, mulai dari 1 hingga 100).
+Edit template pesan di area teks (gunakan variabel {nama}, {nomor}, {no}).
 
 
-### 4. Jalankan Script
+Kirim Pesan: Klik "Start" untuk memulai, "Pause" untuk menjeda, atau "Stop" untuk menghentikan.
+Pantau Proses: Lihat progress bar dan log untuk status pengiriman.
 
-```bash
-python main.py
-```
+❗ Catatan Penting
 
-> Pastikan:
-> - WhatsApp Web aktif dan login di browser default (Chrome/Edge)
-> - File `poster.jpg` tersedia dalam direktori
-> - `data.xlsx` sudah diisi dengan benar
+WhatsApp Web: Script menggunakan pywhatkit yang membuka WhatsApp Web di browser default. Jangan tutup browser selama proses pengiriman.
+Jeda: Jeda acak (default 10-15 detik) membantu mencegah pemblokiran oleh WhatsApp. Sesuaikan sesuai kebutuhan.
+Format Nomor: Nomor HP otomatis diformat ke +62xxx. Nomor tidak valid akan dilewati.
+Kepatuhan: Gunakan script secara bertanggung jawab dan patuhi syarat layanan WhatsApp serta peraturan lokal tentang pengiriman pesan massal.
 
-## ❗ Catatan Penting
+💻 Dibuat Dengan
 
-- `pywhatkit` akan membuka WhatsApp Web di browser default.
-- Pesan akan dijadwalkan otomatis. Jangan tutup browser saat proses berjalan.
-- Tambahkan `time.sleep` untuk menghindari terlalu cepat mengirim ke banyak nomor.
+Python
+Tkinter (untuk GUI)
+pandas (untuk membaca Excel)
+pywhatkit (untuk pengiriman WhatsApp)
+openpyxl (untuk dukungan Excel)
 
-## 💻 Dibuat Dengan
-
-- Python
-- pandas
-- pywhatkit
-- openpyxl
-
-## 📬 Kontak
-
-Jika kamu mengalami kendala atau ingin kontribusi, silakan hubungi atau buat issue di repo ini 🙌
+📬 Kontak
+Jika Anda mengalami kendala atau ingin berkontribusi, silakan buat issue atau pull request di repository ini 🙌
+📄 Lisensi
+Proyek ini dilisensikan di bawah MIT License. Lihat file LICENSE untuk detailnya.
